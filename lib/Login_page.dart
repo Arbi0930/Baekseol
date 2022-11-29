@@ -3,10 +3,12 @@ import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:lapp/Home_page.dart';
+import 'package:lapp/api/index.dart';
 import 'package:lapp/jolooch_home.dart';
 import 'package:http/http.dart';
 import 'dart:async';
 import 'dart:convert';
+import 'package:dio/dio.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -23,6 +25,9 @@ class _LoginPageState extends State<LoginPage> {
   String Radvalue = "1";
   void OnSubmit() {
     if (_formkey.currentState!.validate()) {
+      final api = ApiService();
+      final data = api.getRequest('');
+      print(data);
       if (ajiltan == AjiltanEnum.Borluulagch) {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => HomePage()));
@@ -31,6 +36,12 @@ class _LoginPageState extends State<LoginPage> {
             context, MaterialPageRoute(builder: (context) => JoloochPage()));
       }
     }
+  }
+
+  void _onHttpRequest() async {
+    final api = ApiService();
+    final data = api.getRequest('');
+    print(data);
   }
 
   @override
