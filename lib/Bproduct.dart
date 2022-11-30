@@ -18,7 +18,7 @@ void main() {
 }
 
 class BorluulagchProduct extends StatefulWidget {
-  const BorluulagchProduct({super.key});
+  const BorluulagchProduct({Key? key}) : super(key: key);
 
   @override
   State<BorluulagchProduct> createState() => _BorluulagchProductState();
@@ -128,8 +128,7 @@ class _BorluulagchProductState extends State<BorluulagchProduct> {
                           padding: const EdgeInsets.all(8.0),
                           child: SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
-                            child: ElevatedButton(
-                                onPressed: _onsar, child: Text('$dateTime')),
+                            child: ElevatedButton(onPressed: _onsar, child: Text('$dateTime')),
                           ),
                         ),
                       ),
@@ -258,16 +257,12 @@ class _BorluulagchProductState extends State<BorluulagchProduct> {
                         padding: const EdgeInsets.all(5.0),
                         child: Container(
                           padding: EdgeInsets.all(5),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(color: Colors.white),
-                              borderRadius: BorderRadius.circular(20)),
+                          decoration:
+                              BoxDecoration(color: Colors.white, border: Border.all(color: Colors.white), borderRadius: BorderRadius.circular(20)),
                           child: ElevatedButton(
                             style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all<Color>(
-                                  Colors.white),
-                              foregroundColor: MaterialStateProperty.all<Color>(
-                                  Colors.black),
+                              backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                              foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
                               elevation: MaterialStateProperty.all<double>(0),
                             ),
                             onPressed: _onBackButton,

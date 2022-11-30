@@ -18,7 +18,7 @@ void main() {
 }
 
 class JoloochPage extends StatefulWidget {
-  const JoloochPage({super.key});
+  const JoloochPage({Key? key}) : super(key: key);
 
   @override
   State<JoloochPage> createState() => _JoloochPageState();
@@ -44,14 +44,12 @@ class _JoloochPageState extends State<JoloochPage> {
           content: Text("Амжилттай Хадгаллаа"),
         ),
       );
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => JoloochPage()));
+      Navigator.push(context, MaterialPageRoute(builder: (context) => JoloochPage()));
     }
   }
 
   void LogOutButton() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => LoginPage()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
   }
 
   int _counter = 0;
@@ -112,8 +110,7 @@ class _JoloochPageState extends State<JoloochPage> {
       ),
       body: Container(
         decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('images/back1.jpg'), fit: BoxFit.fitWidth),
+          image: DecorationImage(image: AssetImage('images/back1.jpg'), fit: BoxFit.fitWidth),
         ),
         child: SafeArea(
             child: Center(
@@ -147,8 +144,7 @@ class _JoloochPageState extends State<JoloochPage> {
                         padding: const EdgeInsets.all(8.0),
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
-                          child: ElevatedButton(
-                              onPressed: _onsar, child: Text('$dateTime')),
+                          child: ElevatedButton(onPressed: _onsar, child: Text('$dateTime')),
                         ),
                       ),
                     ),
@@ -304,7 +300,7 @@ class _JoloochPageState extends State<JoloochPage> {
                                   ),
                                   DataCell(DropdownButtonFormField(
                                       validator: (value) {
-                                        if (value == null || value.isEmpty) {
+                                        if (value == null) {
                                           return "Хоосон байж болохгүй";
                                         }
                                         return null;
@@ -316,8 +312,7 @@ class _JoloochPageState extends State<JoloochPage> {
                                       ),
                                       dropdownColor: Colors.white,
                                       isExpanded: true,
-                                      style: TextStyle(
-                                          color: Colors.black, fontSize: 16),
+                                      style: TextStyle(color: Colors.black, fontSize: 16),
                                       hint: Text("Төлбөр"),
                                       items: [
                                         DropdownMenuItem(
@@ -360,10 +355,8 @@ class _JoloochPageState extends State<JoloochPage> {
                               child: ElevatedButton(
                                 style: ButtonStyle(
                                   elevation: MaterialStateProperty.all(0),
-                                  backgroundColor:
-                                      MaterialStateProperty.all(Colors.white),
-                                  foregroundColor:
-                                      MaterialStateProperty.all(Colors.black),
+                                  backgroundColor: MaterialStateProperty.all(Colors.white),
+                                  foregroundColor: MaterialStateProperty.all(Colors.black),
                                 ),
                                 onPressed: savebutton,
                                 child: Text("Хадгалах"),
@@ -378,16 +371,12 @@ class _JoloochPageState extends State<JoloochPage> {
                             child: Container(
                               padding: EdgeInsets.only(left: 10, right: 10),
                               decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border.all(color: Colors.white),
-                                  borderRadius: BorderRadius.circular(30)),
+                                  color: Colors.white, border: Border.all(color: Colors.white), borderRadius: BorderRadius.circular(30)),
                               child: ElevatedButton(
                                 style: ButtonStyle(
                                   elevation: MaterialStateProperty.all(0),
-                                  backgroundColor:
-                                      MaterialStateProperty.all(Colors.white),
-                                  foregroundColor:
-                                      MaterialStateProperty.all(Colors.black),
+                                  backgroundColor: MaterialStateProperty.all(Colors.white),
+                                  foregroundColor: MaterialStateProperty.all(Colors.black),
                                 ),
                                 onPressed: LogOutButton,
                                 child: Text("Гарах"),

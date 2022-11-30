@@ -8,7 +8,7 @@ import 'dart:async';
 import 'dart:convert';
 
 class ProductPage extends StatefulWidget {
-  const ProductPage({super.key});
+  const ProductPage({Key? key}) : super(key: key);
 
   @override
   State<ProductPage> createState() => _ProductPageState();
@@ -23,15 +23,13 @@ class _ProductPageState extends State<ProductPage> {
           content: Text("Амжилттай захиалга өглөө"),
         ),
       );
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => HomePage()));
+      Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
     }
     ;
   }
 
   void _BackButton() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => HomePage()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
   }
 
   @override
@@ -94,13 +92,10 @@ class _ProductPageState extends State<ProductPage> {
                           child: Container(
                             padding: EdgeInsets.only(left: 16),
                             decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: Colors.white, width: 1),
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(20)),
+                                border: Border.all(color: Colors.white, width: 1), color: Colors.white, borderRadius: BorderRadius.circular(20)),
                             child: DropdownButtonFormField(
                               validator: (value) {
-                                if (value == null || value.isEmpty) {
+                                if (value == null) {
                                   return "Хоосон байж болохгүй";
                                 }
                                 return null;
@@ -112,8 +107,7 @@ class _ProductPageState extends State<ProductPage> {
                               ),
                               dropdownColor: Colors.white,
                               isExpanded: true,
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 16),
+                              style: TextStyle(color: Colors.black, fontSize: 16),
                               hint: Text("Бүтээгдэхүүний бренд"),
                               items: [
                                 DropdownMenuItem(
@@ -135,13 +129,11 @@ class _ProductPageState extends State<ProductPage> {
                           padding: const EdgeInsets.all(16.0),
                           child: Container(
                             padding: EdgeInsets.only(left: 16, right: 16),
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border.all(color: Colors.white),
-                                borderRadius: BorderRadius.circular(20)),
+                            decoration:
+                                BoxDecoration(color: Colors.white, border: Border.all(color: Colors.white), borderRadius: BorderRadius.circular(20)),
                             child: DropdownButtonFormField(
                               validator: (value) {
-                                if (value == null || value.isEmpty) {
+                                if (value == null) {
                                   return "Хоосон байж болохгүй";
                                 }
                                 return null;
@@ -153,8 +145,7 @@ class _ProductPageState extends State<ProductPage> {
                               ),
                               dropdownColor: Colors.white,
                               isExpanded: true,
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 16),
+                              style: TextStyle(color: Colors.black, fontSize: 16),
                               items: [
                                 DropdownMenuItem(
                                   value: "1",
@@ -188,8 +179,7 @@ class _ProductPageState extends State<ProductPage> {
                             },
                             decoration: InputDecoration(
                               label: Text("Бүтээгдэхүүний тоо ширхэг"),
-                              labelStyle:
-                                  TextStyle(fontWeight: FontWeight.bold),
+                              labelStyle: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             keyboardType: TextInputType.number,
                           ),
@@ -213,8 +203,7 @@ class _ProductPageState extends State<ProductPage> {
                             },
                             decoration: InputDecoration(
                               label: Text("Захиалагчийн нэр"),
-                              labelStyle:
-                                  TextStyle(fontWeight: FontWeight.bold),
+                              labelStyle: TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ),
                         ),
@@ -237,8 +226,7 @@ class _ProductPageState extends State<ProductPage> {
                             },
                             decoration: InputDecoration(
                               label: Text("Захиалагчийн утасны дугаар"),
-                              labelStyle:
-                                  TextStyle(fontWeight: FontWeight.bold),
+                              labelStyle: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             keyboardType: TextInputType.phone,
                             maxLength: 8,
@@ -263,8 +251,7 @@ class _ProductPageState extends State<ProductPage> {
                             },
                             decoration: InputDecoration(
                               label: Text("Захиалагчийн гэрийн хаяг"),
-                              labelStyle:
-                                  TextStyle(fontWeight: FontWeight.bold),
+                              labelStyle: TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ),
                         ),
@@ -274,17 +261,13 @@ class _ProductPageState extends State<ProductPage> {
                         height: 51,
                         child: Container(
                           padding: EdgeInsets.all(12),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(color: Colors.white),
-                              borderRadius: BorderRadius.circular(20)),
+                          decoration:
+                              BoxDecoration(color: Colors.white, border: Border.all(color: Colors.white), borderRadius: BorderRadius.circular(20)),
                           child: ElevatedButton(
                             style: ButtonStyle(
                               elevation: MaterialStateProperty.all<double>(0),
-                              backgroundColor:
-                                  MaterialStateProperty.all(Colors.white),
-                              foregroundColor:
-                                  MaterialStateProperty.all(Colors.black),
+                              backgroundColor: MaterialStateProperty.all(Colors.white),
+                              foregroundColor: MaterialStateProperty.all(Colors.black),
                             ),
                             onPressed: _successButton,
                             child: Text(

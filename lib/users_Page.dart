@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:lapp/Home_page.dart';
 import 'package:http/http.dart';
-import 'dart:async';
-import 'dart:convert';
 
 class UserPage extends StatefulWidget {
-  const UserPage({super.key});
+  const UserPage({Key? key}) : super(key: key);
 
   @override
   State<UserPage> createState() => _UserPageState();
@@ -111,8 +107,7 @@ class _UserPageState extends State<UserPage> {
                                 },
                                 decoration: InputDecoration(
                                   label: Text("Утасны дугаар"),
-                                  labelStyle:
-                                      TextStyle(fontWeight: FontWeight.bold),
+                                  labelStyle: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 keyboardType: TextInputType.number,
                                 maxLength: 8,
@@ -127,19 +122,14 @@ class _UserPageState extends State<UserPage> {
                             height: 77,
                             child: Container(
                               decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.redAccent),
-                                  color: Color(0xffB0ECFF),
-                                  borderRadius: BorderRadius.circular(20)),
+                                  border: Border.all(color: Colors.redAccent), color: Color(0xffB0ECFF), borderRadius: BorderRadius.circular(20)),
                               child: Padding(
                                 padding: const EdgeInsets.all(4.0),
                                 child: ElevatedButton(
                                   style: ButtonStyle(
-                                    backgroundColor: MaterialStateProperty.all(
-                                        Color(0xffB0ECFF)),
-                                    foregroundColor:
-                                        MaterialStateProperty.all(Colors.black),
-                                    elevation:
-                                        MaterialStateProperty.all<double>(0),
+                                    backgroundColor: MaterialStateProperty.all(Color(0xffB0ECFF)),
+                                    foregroundColor: MaterialStateProperty.all(Colors.black),
+                                    elevation: MaterialStateProperty.all<double>(0),
                                   ),
                                   onPressed: _checkButton,
                                   child: Text(
@@ -160,10 +150,8 @@ class _UserPageState extends State<UserPage> {
                       padding: const EdgeInsets.all(16.0),
                       child: Container(
                         padding: EdgeInsets.only(left: 16, right: 16),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(color: Colors.white),
-                            borderRadius: BorderRadius.circular(20)),
+                        decoration:
+                            BoxDecoration(color: Colors.white, border: Border.all(color: Colors.white), borderRadius: BorderRadius.circular(20)),
                         child: TextFormField(
                           validator: (value) {
                             if (value == null || value.isEmpty) {
@@ -184,10 +172,8 @@ class _UserPageState extends State<UserPage> {
                       padding: const EdgeInsets.all(16.0),
                       child: Container(
                         padding: EdgeInsets.only(left: 16, right: 16),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(color: Colors.white),
-                            borderRadius: BorderRadius.circular(20)),
+                        decoration:
+                            BoxDecoration(color: Colors.white, border: Border.all(color: Colors.white), borderRadius: BorderRadius.circular(20)),
                         child: TextFormField(
                           validator: (value) {
                             if (value == null || value.isEmpty) {
@@ -208,10 +194,8 @@ class _UserPageState extends State<UserPage> {
                       padding: const EdgeInsets.all(16.0),
                       child: Container(
                         padding: EdgeInsets.only(left: 16, right: 16),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(color: Colors.white),
-                            borderRadius: BorderRadius.circular(20)),
+                        decoration:
+                            BoxDecoration(color: Colors.white, border: Border.all(color: Colors.white), borderRadius: BorderRadius.circular(20)),
                         child: TextFormField(
                           validator: (value) {
                             if (value == null || value.isEmpty) {
@@ -232,8 +216,7 @@ class _UserPageState extends State<UserPage> {
                     Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: Container(
-                        padding: EdgeInsets.only(
-                            left: 60, right: 60, top: 10, bottom: 10),
+                        padding: EdgeInsets.only(left: 60, right: 60, top: 10, bottom: 10),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
@@ -244,10 +227,8 @@ class _UserPageState extends State<UserPage> {
                         child: ElevatedButton(
                           style: ButtonStyle(
                             elevation: MaterialStateProperty.all<double>(0),
-                            backgroundColor:
-                                MaterialStateProperty.all(Colors.white),
-                            foregroundColor:
-                                MaterialStateProperty.all(Colors.black),
+                            backgroundColor: MaterialStateProperty.all(Colors.white),
+                            foregroundColor: MaterialStateProperty.all(Colors.black),
                           ),
                           onPressed: _registerButton,
                           child: Text(

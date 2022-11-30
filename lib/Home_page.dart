@@ -26,7 +26,7 @@ Future<void> main() async {
 }
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -59,8 +59,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _Product() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => ProductPage()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => ProductPage()));
   }
 
   @override
@@ -148,8 +147,7 @@ class _HomePageState extends State<HomePage> {
                                 width: 173,
                                 child: ElevatedButton(
                                   style: ButtonStyle(
-                                    backgroundColor:
-                                        MaterialStateProperty.all(Colors.white),
+                                    backgroundColor: MaterialStateProperty.all(Colors.white),
                                     foregroundColor: MaterialStateProperty.all(
                                       Color(0xffED5E92),
                                     ),
@@ -188,8 +186,7 @@ class _HomePageState extends State<HomePage> {
                                 width: 173,
                                 child: ElevatedButton(
                                   style: ButtonStyle(
-                                    backgroundColor:
-                                        MaterialStateProperty.all(Colors.white),
+                                    backgroundColor: MaterialStateProperty.all(Colors.white),
                                     foregroundColor: MaterialStateProperty.all(
                                       Color(0xff9BF862),
                                     ),
@@ -228,8 +225,7 @@ class _HomePageState extends State<HomePage> {
                               width: 173,
                               child: ElevatedButton(
                                 style: ButtonStyle(
-                                  backgroundColor:
-                                      MaterialStateProperty.all(Colors.white),
+                                  backgroundColor: MaterialStateProperty.all(Colors.white),
                                   foregroundColor: MaterialStateProperty.all(
                                     Color(0xffD9D5F7),
                                   ),
@@ -265,10 +261,8 @@ class _HomePageState extends State<HomePage> {
                               width: 173,
                               child: ElevatedButton(
                                 style: ButtonStyle(
-                                    backgroundColor:
-                                        MaterialStateProperty.all(Colors.white),
-                                    foregroundColor: MaterialStateProperty.all(
-                                        Color(0xffB8D9EC))),
+                                    backgroundColor: MaterialStateProperty.all(Colors.white),
+                                    foregroundColor: MaterialStateProperty.all(Color(0xffB8D9EC))),
                                 onPressed: _LogOut,
                                 child: Column(
                                   children: [
