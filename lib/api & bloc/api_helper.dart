@@ -4,53 +4,6 @@ import 'package:lapp/helpers/globals.dart';
 class ApiHelper {
   static const String baseUrl = 'http://202.70.34.26/'; // API URL
 
-  static Map<String, String> getHttpHeaders({bool hasAuthorization = true}) {
-    var headers = Map<String, String>();
-    headers.addAll({
-      "Connection": "keep-alive",
-      "Content-Type": "multipart/form-data; boundary=<calculated when request is sent>",
-    });
-
-    // if (hasAuthorization && Func.isNotEmpty(SharedPref.getSessionToken())) {
-    //   headers.addAll({"authorization": "Bearer " + SharedPref.getSessionToken()});
-    // }
-
-    return headers;
-  }
-
-  static String getErrorMessage(int errCode, [Object? error]) {
-    String message = "Алдаа гарлаа: $errCode";
-    // print(error.message);
-
-    switch (errCode) {
-      case ResponseCode.Failed:
-        message = 'Та интернэт холболтоо шалган дахин оролдоно уу ';
-        break;
-
-      case ResponseCode.RequestTimeout:
-        message = 'Та интернэт холболтоо шалган дахин оролдоно уу ';
-        break;
-
-      case ResponseCode.BadRequest:
-        message = 'Интернэт холболтоо шалгана уу!';
-        break;
-    }
-    return message;
-  }
-
-  static String getFailedMessage(String? message) {
-    return Func.isNotEmpty(message) ? message! : 'Error';
-  }
-}
-
-class ResponseParam {
-  static const code = 'code';
-  static const message = 'message';
-  static const data = 'data';
-
-  static String getFailedMessage(String message) {
-    return Func.isNotEmpty(message) ? message : "Error";
-  }
 }
 
 /// HTTP response codes

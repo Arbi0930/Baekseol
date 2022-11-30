@@ -12,10 +12,18 @@ class ApiManager {
       body: request,
     );
     var res = LoginResponse.fromJson(jsonDecode(response.body));
+    print("res:::${res.token}");
     return res;
+  }
+
+  static Future getUserData() async {
+    Response response = await http.get(
+      Uri.parse(ApiHelper.baseUrl + HttpPaths.getUserData),
+    );
   }
 }
 
 class HttpPaths {
   static const String login = 'api/auth/login';
+  static const String getUserData = 'api/user/info';
 }
